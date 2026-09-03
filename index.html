@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Get Your Free Consultation — Finnco Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink:   #0D1117;
+  --body:  #3D4451;
+  --muted: #8A919F;
+  --border:#DDE1E7;
+  --bg:    #F4F5F7;
+  --white: #FFFFFF;
+  --blue:  #1347C8;
+}
+html, body { background: var(--bg); color: var(--body); font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+.nav { background: var(--white); border-bottom: 1px solid var(--border); height: 58px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; }
+.nav-logo { font-size: 22px; font-weight: 800; color: var(--ink); text-decoration: none; letter-spacing: -.03em; }
+.nav-contact { font-size: 13px; color: var(--muted); text-decoration: none; }
+.nav-contact:hover { color: var(--ink); }
+
+/* HERO */
+.hero { background: var(--white); border-bottom: 1px solid var(--border); padding: 60px 24px 56px; text-align: center; }
+.hero-name { font-size: clamp(40px, 6vw, 64px); font-weight: 800; color: var(--ink); letter-spacing: -.04em; line-height: 1; margin-bottom: 16px; }
+.hero h1 { font-size: clamp(20px, 3vw, 28px); font-weight: 700; color: var(--ink); letter-spacing: -.02em; line-height: 1.3; max-width: 520px; margin: 0 auto; }
+
+/* PAGE */
+.page { max-width: 620px; margin: 0 auto; padding: 44px 24px 80px; }
+
+/* GUARANTEE */
+.guarantee { margin-bottom: 24px; padding: 4px 0; }
+.guarantee h2 { font-size: clamp(26px, 4.5vw, 42px); font-weight: 800; color: var(--ink); letter-spacing: -.03em; line-height: 1.15; }
+
+/* FORM CARD */
+.form-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; }
+.form-top { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.form-top h2 { font-size: 15px; font-weight: 600; color: var(--ink); }
+.form-top p { font-size: 13px; color: var(--muted); }
+.progress-label { font-size: 12px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+.progress-track { height: 2px; background: var(--border); width: 100%; }
+.progress-fill { height: 100%; background: var(--ink); transition: width .35s ease; }
+.steps-wrap { padding: 32px 32px 28px; }
+
+/* STEPS */
+.step { display: none; }
+.step.active { display: block; animation: up .22s ease; }
+@keyframes up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.step-q { font-size: 17px; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 5px; letter-spacing: -.01em; }
+.step-hint { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+
+/* INPUTS */
+.field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.field-grid.full { grid-template-columns: 1fr; }
+label.fl { display: block; font-size: 12px; font-weight: 600; color: var(--body); letter-spacing: .01em; margin-bottom: 5px; }
+input[type=text], input[type=email], input[type=tel] { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; color: var(--ink); font-family: inherit; font-size: 14px; padding: 10px 12px; outline: none; transition: border-color .15s; }
+input::placeholder { color: #BCC2CC; }
+input:focus { border-color: var(--ink); background: var(--white); }
+
+/* CHOICES */
+.choices { display: flex; flex-direction: column; gap: 8px; }
+.choice { display: flex; align-items: center; gap: 12px; border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; cursor: pointer; font-size: 14px; color: var(--body); background: var(--white); transition: border-color .12s, background .12s; user-select: none; }
+.choice:hover { border-color: #A8B0BF; background: var(--bg); }
+.choice.selected { border-color: var(--ink); background: var(--bg); color: var(--ink); font-weight: 500; }
+.dot { width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid var(--border); flex-shrink: 0; transition: border-color .12s, background .12s; display: flex; align-items: center; justify-content: center; }
+.choice.selected .dot { border-color: var(--ink); background: var(--ink); }
+.choice.selected .dot::after { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--white); }
+
+/* BUTTONS */
+.btn-row { display: flex; gap: 8px; margin-top: 28px; }
+.btn-back { background: var(--white); border: 1px solid var(--border); border-radius: 4px; color: var(--muted); cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 500; padding: 10px 18px; transition: border-color .12s, color .12s; }
+.btn-back:hover { border-color: var(--body); color: var(--body); }
+.btn-next { flex: 1; background: var(--ink); border: none; border-radius: 4px; color: var(--white); cursor: pointer; font-family: inherit; font-size: 14px; font-weight: 600; padding: 11px 20px; letter-spacing: -.01em; transition: background .12s; }
+.btn-next:hover { background: #1f2937; }
+
+/* ERROR */
+.err { font-size: 12px; color: #C0392B; margin-top: 8px; display: none; }
+.err.show { display: block; }
+
+/* THANK YOU */
+.thankyou { display: none; padding: 8px 0; }
+.thankyou.active { display: block; animation: up .3s ease; }
+.ty-mark { width: 40px; height: 40px; border: 1.5px solid var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 17px; }
+.ty-head { font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -.02em; }
+.ty-sub { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ABOUT */
+.about { margin-top: 52px; padding-top: 48px; border-top: 1px solid var(--border); }
+.about-kicker { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.about h2 { font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; color: var(--ink); letter-spacing: -.025em; line-height: 1.25; margin-bottom: 16px; }
+.about-intro { font-size: 14px; color: var(--body); line-height: 1.8; margin-bottom: 28px; }
+.contact-line { font-size: 14px; color: var(--body); line-height: 1.75; padding-top: 24px; border-top: 1px solid var(--border); }
+.contact-line a { color: var(--blue); text-decoration: none; font-weight: 500; }
+.contact-line a:hover { text-decoration: underline; }
+
+/* FOOTER */
+.foot { background: var(--white); border-top: 1px solid var(--border); text-align: center; padding: 22px 24px; font-size: 13px; color: var(--muted); margin-top: 60px; }
+.foot a { color: var(--body); text-decoration: none; }
+.foot a:hover { color: var(--blue); }
+
+@media (max-width: 500px) {
+  .nav { padding: 0 20px; }
+  .form-top { flex-direction: column; align-items: flex-start; gap: 4px; padding: 20px 22px 18px; }
+  .steps-wrap { padding: 24px 22px 22px; }
+  .field-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="https://finncosolutions.com">Finnco Solutions</a>
+  <a class="nav-contact" href="tel:6094448400">609-444-8400</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-name">Finnco Solutions</div>
+  <h1>Struggling to get leads? We got you covered!</h1>
+</div>
+
+<div class="page">
+
+  <div class="guarantee">
+    <h2>You don't pay until you get your first client from us.</h2>
+  </div>
+
+  <div class="form-card">
+    <div class="form-top">
+      <div>
+        <h2>Fill out a few simple questions to set up a free consultation</h2>
+        <p>Takes about 2 minutes.</p>
+      </div>
+      <div class="progress-label" id="prog-label">Step 1 of 8</div>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="bar" style="width:12%"></div></div>
+
+    <div class="steps-wrap">
+
+      <!-- Step 1: Contact info -->
+      <div class="step active" id="s1">
+        <div class="step-q">Let's start with your contact info.</div>
+        <div class="step-hint">We'll use this to reach out about your free consultation.</div>
+        <div class="field-grid">
+          <div><label class="fl" for="fname">First name</label><input type="text" id="fname" placeholder="Jane"/></div>
+          <div><label class="fl" for="lname">Last name</label><input type="text" id="lname" placeholder="Smith"/></div>
+        </div>
+        <div class="field-grid full">
+          <div><label class="fl" for="email">Email address</label><input type="email" id="email" placeholder="jane@yourbusiness.com"/></div>
+        </div>
+        <div class="field-grid full">
+          <div><label class="fl" for="phone">Phone number</label><input type="tel" id="phone" placeholder="(555) 000-0000"/></div>
+        </div>
+        <div class="err" id="err1">Please fill in all fields to continue.</div>
+        <div class="btn-row"><button class="btn-next" onclick="next(1)">Continue →</button></div>
+      </div>
+
+      <!-- Step 2: Running ads? -->
+      <div class="step" id="s2">
+        <div class="step-q">Are you currently running paid ads?</div>
+        <div class="step-hint">Google, Meta, TikTok — any platform counts.</div>
+        <div class="choices">
+          <div class="choice" onclick="pick(this,'ads_running','Yes — actively running')"><div class="dot"></div>Yes — actively running</div>
+          <div class="choice" onclick="pick(this,'ads_running','Ran them before, paused now')"><div class="dot"></div>Ran them before, paused now</div>
+          <div class="choice" onclick="pick(this,'ads_running','No — never run ads')"><div class="dot"></div>No — never run ads</div>
+        </div>
+        <div class="err" id="err2">Please select an option.</div>
+        <div class="btn-row">
+          <button class="btn-back" onclick="back(2)">← Back</button>
+          <button class="btn-next" onclick="next(2)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Current ad spend -->
+      <div class="step" id="s3">
+        <div class="step-q">How much are you currently spending on ads per month?</div>
+        <div class="step-hint">An estimate is fine.</div>
+        <div class="choices">
+          <div class="choice" onclick="pick(this,'ad_spend','$0 — not spending yet')"><div class="dot"></div>$0 — not spending yet</div>
+          <div class="choice" onclick="pick(this,'ad_spend','Under $500/month')"><div class="dot"></div>Under $500/month</div>
+          <div class="choice" onclick="pick(this,'ad_spend','$500–$1,000/month')"><div class="dot"></div>$500–$1,000/month</div>
+          <div class="choice" onclick="pick(this,'ad_spend','$1,000–$3,000/month')"><div class="dot"></div>$1,000–$3,000/month</div>
+          <div class="choice" onclick="pick(this,'ad_spend','$3,000+/month')"><div class="dot"></div>$3,000+/month</div>
+        </div>
+        <div class="err" id="err3">Please select an option.</div>
+        <div class="btn-row">
+          <button class="btn-back" onclick="back(3)">← Back</button>
+          <button class="btn-next" onclick="next(3)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Planned ad spend -->
+      <div class="step" id="s4">
+        <div class="step-q">How much do you plan to spend on ads?</div>
+        <div class="step-hint">This helps us build the right strategy for your budget.</div>
+        <div class="choices">
+          <div class="choice" onclick="pick(this,'planned_spend','Under $500/month')"><div class="dot"></div>Under $500/month</div>
+          <div class="choice" onclick="pick(this,'planned_spend','$500–$1,000/month')"><div class="dot"></div>$500–$1,000/month</div>
+          <div class="choice" onclick="pick(this,'planned_spend','$1,000–$3,000/month')"><div class="dot"></div>$1,000–$3,000/month</div>
+          <div class="choice" onclick="pick(this,'planned_spend','$3,000–$5,000/month')"><div class="dot"></div>$3,000–$5,000/month</div>
+          <div class="choice" onclick="pick(this,'planned_spend','$5,000+/month')"><div class="dot"></div>$5,000+/month</div>
+        </div>
+        <div class="err" id="err4">Please select an option.</div>
+        <div class="btn-row">
+          <button class="btn-back" onclick="back(4)">← Back</button>
+          <button class="btn-next" onclick="next(4)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 5: Main goal -->
+      <div class="step" id="s5">
+        <div class="step-q">What's the main thing you're trying to fix?</div>
+        <div class="step-hint">Pick the one that feels most urgent.</div>
+        <div class="choices">
+          <div class="choice" onclick="pick(this,'goal','Get more leads coming in')"><div class="dot"></div>Get more leads coming in</div>
+          <div class="choice" onclick="pick(this,'goal','Improve lead quality — too many bad fits')"><div class="dot"></div>Improve lead quality — too many bad fits</div>
+          <div class="choice" onclick="pick(this,'goal','Lower cost per lead')"><div class="dot"></div>Lower cost per lead</div>
+          <div class="choice" onclick="pick(this,'goal','Build a landing page that converts')"><div class="dot"></div>Build a landing page that converts</div>
+          <div class="choice" onclick="pick(this,'goal','Automate follow-up after leads come in')"><div class="dot"></div>Automate follow-up after leads come in</div>
+        </div>
+        <div class="err" id="err5">Please select an option.</div>
+        <div class="btn-row">
+          <button class="btn-back" onclick="back(5)">← Back</button>
+          <button class="btn-next" onclick="next(5)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 6: Industry -->
+      <div class="step" id="s6">
+        <div class="step-q">What industry are you in?</div>
+        <div class="step-hint">Helps us know what ad strategy fits your market.</div>
+        <div class="choices">
+          <div class="choice" onclick="pick(this,'industry','Home services')"><div class="dot"></div>Home services (roofing, HVAC, plumbing, etc.)</div>
+          <div class="choice" onclick="pick(this,'industry','Healthcare or medical')"><div class="dot"></div>Healthcare or medical</div>
+          <div class="choice" onclick="pick(this,'industry','Legal or financial services')"><div class="dot"></div>Legal or financial services</div>
+          <div class="choice" onclick="pick(this,'industry','Real estate')"><div class="dot"></div>Real estate</div>
+          <div class="choice" onclick="pick(this,'industry','E-commerce or retail')"><div class="dot"></div>E-commerce or retail</div>
+          <div class="choice" onclick="pick(this,'industry','Other')"><div class="dot"></div>Other</div>
+        </div>
+        <div class="err" id="err6">Please select an option.</div>
+        <div class="btn-row">
+          <button class="btn-back" onclick="back(6)">← Back</button>
+          <button class="btn-next" onclick="next(6)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 7: Follow-up -->
+      <div class="step" id="s7">
+        <div class="step-q">How are you following up with leads right now?</div>
+        <div class="step-hint">This is where we usually find the biggest gap.</div>
+        <div class="choices">
+          <div class="choice" onclick="pick(this,'followup','Manually calling or texting — no system')"><div class="dot"></div>Manually calling or texting — no system</div>
+          <div class="choice" onclick="pick(this,'followup','Email autoresponder only')"><div class="dot"></div>Email autoresponder only</div>
+          <div class="choice" onclick="pick(this,'followup','CRM with some automation')"><div class="dot"></div>CRM with some automation</div>
+          <div class="choice" onclick="pick(this,'followup','Full automated system in place')"><div class="dot"></div>Full automated system in place</div>
+          <div class="choice" onclick="pick(this,'followup','Not following up at all')"><div class="dot"></div>Not following up at all</div>
+        </div>
+        <div class="err" id="err7">Please select an option.</div>
+        <div class="btn-row">
+          <button class="btn-back" onclick="back(7)">← Back</button>
+          <button class="btn-next" onclick="next(7)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 8: Timeline -->
+      <div class="step" id="s8">
+        <div class="step-q">How soon are you looking to get started?</div>
+        <div class="step-hint">No pressure — helps us prioritize your review.</div>
+        <div class="choices">
+          <div class="choice" onclick="pick(this,'timeline','Right away — this is urgent')"><div class="dot"></div>Right away — this is urgent</div>
+          <div class="choice" onclick="pick(this,'timeline','Within the next 30 days')"><div class="dot"></div>Within the next 30 days</div>
+          <div class="choice" onclick="pick(this,'timeline','1–3 months out')"><div class="dot"></div>1–3 months out</div>
+          <div class="choice" onclick="pick(this,'timeline','Just exploring for now')"><div class="dot"></div>Just exploring for now</div>
+        </div>
+        <div class="err" id="err8">Please select an option.</div>
+        <div class="btn-row">
+          <button class="btn-back" onclick="back(8)">← Back</button>
+          <button class="btn-next" onclick="submit()">Submit →</button>
+        </div>
+      </div>
+
+      <!-- Thank you -->
+      <div class="thankyou" id="thankyou">
+        <div class="ty-mark">✓</div>
+        <div class="ty-head">You're all set.</div>
+        <div class="ty-sub">
+          We'll review your answers and be in touch within one business day.<br><br>
+          Prefer to talk now? Call <strong>609-444-8400</strong> or email <strong>finnco.solutions@gmail.com</strong>.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about">
+    <div class="about-kicker">What We Do</div>
+    <h2>Paid Ads</h2>
+    <div class="about-intro">
+      We generate leads for your business through Facebook and Instagram ads by targeting the right people in your exact service area. Instead of running ads to everyone, we zero in on your ideal customers based on where they live, their interests, and their buying behavior — so the people reaching out are already in your market and ready to take action.
+    </div>
+    <div class="contact-line">
+      Questions before filling out the form? Call <a href="tel:6094448400">609-444-8400</a> or email <a href="mailto:finnco.solutions@gmail.com">finnco.solutions@gmail.com</a>.
+    </div>
+  </div>
+
+</div>
+
+<div class="foot">
+  <a href="https://finncosolutions.com">← finncosolutions.com</a> &nbsp;·&nbsp; © 2026 Finnco Solutions
+</div>
+
+<script>
+const TOTAL = 8;
+const answers = {};
+
+function updateBar(n) {
+  document.getElementById('bar').style.width = Math.round((n/TOTAL)*100)+'%';
+  document.getElementById('prog-label').textContent = 'Step '+n+' of '+TOTAL;
+}
+function showStep(n) {
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  const el = document.getElementById('s'+n);
+  if(el) el.classList.add('active');
+  updateBar(n);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function pick(el,key,val) {
+  el.closest('.choices').querySelectorAll('.choice').forEach(c=>c.classList.remove('selected'));
+  el.classList.add('selected');
+  answers[key]=val;
+}
+function next(step) {
+  document.getElementById('err'+step).classList.remove('show');
+  if(step===1){
+    const fn=document.getElementById('fname').value.trim();
+    const ln=document.getElementById('lname').value.trim();
+    const em=document.getElementById('email').value.trim();
+    const ph=document.getElementById('phone').value.trim();
+    if(!fn||!ln||!em||!ph){document.getElementById('err1').classList.add('show');return;}
+    answers.first_name=fn;answers.last_name=ln;answers.email=em;answers.phone=ph;
+  } else {
+    const keys=['','','ads_running','ad_spend','planned_spend','goal','industry','followup','timeline'];
+    if(!answers[keys[step]]){document.getElementById('err'+step).classList.add('show');return;}
+  }
+  showStep(step+1);
+}
+function back(step){showStep(step-1);}
+function submit(){
+  document.getElementById('err8').classList.remove('show');
+  if(!answers['timeline']){document.getElementById('err8').classList.add('show');return;}
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  document.getElementById('bar').style.width='100%';
+  document.getElementById('prog-label').textContent='Complete';
+  document.getElementById('thankyou').classList.add('active');
+  fetch('https://finnco.app.n8n.cloud/webhook/finnco-lead', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(answers)
+  }).catch(err => console.error('Webhook error:', err));
+}
+</script>
+</body>
+</html>
