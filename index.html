@@ -326,7 +326,7 @@ function showStep(n) {
   const el = document.getElementById('s'+n);
   if(el) el.classList.add('active');
   updateBar(n);
-  window.scrollTo({top:0,behavior:'smooth'});
+  document.querySelector('.form-card').scrollIntoView({behavior:'smooth', block:'start'});
 }
 function pick(el,key,val) {
   el.closest('.choices').querySelectorAll('.choice').forEach(c=>c.classList.remove('selected'));
