@@ -358,7 +358,8 @@ function submit(){
   document.getElementById('thankyou').classList.add('active');
   fetch('https://finnco.app.n8n.cloud/webhook/finnco-lead', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain' },
     body: JSON.stringify(answers)
   }).catch(err => console.error('Webhook error:', err));
 }
