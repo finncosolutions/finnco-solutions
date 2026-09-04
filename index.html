@@ -324,8 +324,8 @@ function next(step) {
 }
 function back(step){showStep(step-1);}
 function submit(){
-  document.getElementById('err7').classList.remove('show');
-  if(!answers['timeline']){document.getElementById('err7').classList.add('show');return;}
+  document.getElementById('err6').classList.remove('show');
+  if(!answers['timeline']){document.getElementById('err6').classList.add('show');return;}
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
   document.getElementById('bar').style.width='100%';
   document.getElementById('thankyou').classList.add('active');
