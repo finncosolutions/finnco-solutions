@@ -329,7 +329,7 @@ function submit(){
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
   document.getElementById('bar').style.width='100%';
   document.getElementById('thankyou').classList.add('active');
-  fetch('https://finnco.app.n8n.cloud/webhook/finnco-lead', {
+  fetch('https://finnco.app.n8n.cloud/webhook-test/finnco-lead', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(answers)
