@@ -18,33 +18,26 @@
 }
 html, body { background: var(--white); color: var(--body); font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-/* TOP BRAND */
 .top-brand { text-align: center; padding: 28px 24px 0; }
 .top-brand-name { font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 700; color: var(--navy); letter-spacing: .03em; text-transform: uppercase; }
 
-/* HERO */
 .hero { text-align: center; padding: 28px 24px 0; max-width: 700px; margin: 0 auto; }
 .hero-eyebrow { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
 .hero h1 { font-size: clamp(34px, 6vw, 58px); font-weight: 800; color: var(--navy); letter-spacing: -.03em; line-height: 1.1; margin-bottom: 18px; }
-.hero-sub { font-size: clamp(15px, 2vw, 18px); font-weight: 700; font-style: italic; color: var(--navy); margin-bottom: 10px; }
-.hero-hint { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 13px; color: var(--muted); margin-bottom: 28px; }
 
-/* PROGRESS BAR */
 .prog-wrap { max-width: 700px; margin: 0 auto; padding: 0 24px; }
 .prog-track { height: 5px; background: var(--border); border-radius: 99px; overflow: hidden; }
 .prog-fill { height: 100%; background: var(--navy); border-radius: 99px; transition: width .35s ease; }
 
-/* FORM */
 .form-wrap { max-width: 700px; margin: 0 auto; padding: 32px 24px 0; }
 
 .step { display: none; }
 .step.active { display: block; animation: up .2s ease; }
 @keyframes up { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
 
-.step-num { font-size: 13px; font-weight: 700; color: var(--navy); background: var(--navy); color: white; width: 22px; height: 22px; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 12px; }
+.step-num { width: 22px; height: 22px; border-radius: 4px; background: var(--navy); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: white; margin-bottom: 12px; }
 .step-q { font-size: clamp(17px, 2.5vw, 22px); font-weight: 700; color: var(--ink); line-height: 1.3; margin-bottom: 20px; letter-spacing: -.02em; }
 
-/* INPUTS */
 .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
 .field-grid.full { grid-template-columns: 1fr; }
 label.fl { display: block; font-size: 11px; font-weight: 700; color: var(--body); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 5px; }
@@ -52,7 +45,6 @@ input[type=text], input[type=email], input[type=tel] { width: 100%; background: 
 input::placeholder { color: #C4C9D4; }
 input:focus { border-color: var(--navy); background: var(--white); }
 
-/* CHOICES */
 .choices { display: flex; flex-direction: column; gap: 10px; }
 .choice { display: flex; align-items: center; gap: 14px; border: 1.5px solid var(--border); border-radius: 8px; padding: 14px 16px; cursor: pointer; font-size: 15px; color: var(--body); background: var(--white); transition: border-color .12s, background .12s; user-select: none; }
 .choice:hover { border-color: var(--navy); background: #F5F7FF; }
@@ -60,30 +52,25 @@ input:focus { border-color: var(--navy); background: var(--white); }
 .choice-letter { width: 26px; height: 26px; border-radius: 5px; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--body); flex-shrink: 0; transition: background .12s, color .12s; }
 .choice.selected .choice-letter { background: var(--navy); color: var(--white); }
 
-/* BUTTONS */
 .btn-row { display: flex; gap: 10px; margin-top: 24px; }
 .btn-back { background: var(--white); border: 1.5px solid var(--border); border-radius: 6px; color: var(--muted); cursor: pointer; font-family: inherit; font-size: 14px; font-weight: 500; padding: 12px 20px; transition: border-color .12s; }
 .btn-back:hover { border-color: var(--navy); color: var(--navy); }
 .btn-next { flex: 1; background: var(--navy); border: none; border-radius: 6px; color: var(--white); cursor: pointer; font-family: inherit; font-size: 15px; font-weight: 700; padding: 14px 20px; transition: background .12s; letter-spacing: -.01em; }
 .btn-next:hover { background: var(--blue); }
 
-/* ERROR */
 .err { font-size: 12px; color: #DC2626; margin-top: 8px; display: none; }
 .err.show { display: block; }
 
-/* THANK YOU */
 .thankyou { display: none; text-align: center; padding: 20px 0; }
 .thankyou.active { display: block; animation: up .3s ease; }
 .ty-mark { width: 48px; height: 48px; border: 2px solid var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 20px; color: var(--navy); }
 .ty-head { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 10px; letter-spacing: -.02em; }
 .ty-sub { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-/* TRUST */
 .trust { text-align: center; padding: 40px 24px 0; }
 .stars { color: #F59E0B; font-size: 24px; letter-spacing: 3px; margin-bottom: 6px; }
 .trust-line { font-size: 13px; color: var(--muted); }
 
-/* WHY */
 .why { max-width: 800px; margin: 0 auto; padding: 64px 24px 56px; text-align: center; }
 .why h2 { font-size: clamp(22px, 3.5vw, 34px); font-weight: 800; color: var(--navy); letter-spacing: -.03em; margin-bottom: 36px; line-height: 1.2; }
 .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 44px; text-align: left; }
@@ -93,7 +80,6 @@ input:focus { border-color: var(--navy); background: var(--white); }
 .why-cta { display: inline-block; background: var(--navy); color: var(--white); font-family: inherit; font-size: 15px; font-weight: 700; padding: 16px 44px; border-radius: 6px; text-decoration: none; border: none; cursor: pointer; transition: background .15s; letter-spacing: -.01em; }
 .why-cta:hover { background: var(--blue); }
 
-/* FOOTER */
 .foot { border-top: 1px solid var(--border); text-align: center; padding: 28px 24px; }
 .foot-logo { font-size: 15px; font-weight: 800; color: var(--navy); letter-spacing: -.02em; margin-bottom: 4px; }
 .foot-tag { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
@@ -107,31 +93,84 @@ input:focus { border-color: var(--navy); background: var(--white); }
 </head>
 <body>
 
-<!-- BRAND -->
 <div class="top-brand">
   <div class="top-brand-name">Finnco Solutions</div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">Business Owners:</div>
   <h1>I will find you leads who are actively looking for your service so that you don't have to worry about getting leads yourself.</h1>
-  <div class="hero-hint" style="font-style:normal; color:#1B2B5E; font-size:22px; font-weight:700; margin-bottom:40px;">And you only pay when we actually deliver your first client.</div>
-  <div style="margin-top:20px; font-style:normal; color:#4B5563; font-size:18px; font-weight:600; margin-bottom:28px;">Complete a short questionnaire so we can contact you and book you in for a free consultation.</div>
+  <div style="font-style:normal; color:#1B2B5E; font-size:22px; font-weight:700; margin-bottom:40px;">And you only pay when we actually deliver your first client.</div>
+  <div style="margin-top:10px; font-style:normal; color:#4B5563; font-size:18px; font-weight:600; margin-bottom:28px;">Complete a short questionnaire so we can contact you and book you in for a free consultation.</div>
 </div>
 
-<!-- PROGRESS -->
 <div class="prog-wrap">
-  <div class="prog-track"><div class="prog-fill" id="bar" style="width:12%"></div></div>
+  <div class="prog-track"><div class="prog-fill" id="bar" style="width:20%"></div></div>
 </div>
 
-<!-- FORM -->
 <div class="form-wrap">
 
+  <!-- Step 1: Running ads? -->
   <div class="step active" id="s1">
     <div style="margin-top:28px">
       <div class="step-num">1</div>
-      <div class="step-q">What is your first and last name?</div>
+      <div class="step-q">Are you currently running paid ads?*</div>
+      <div class="choices">
+        <div class="choice" onclick="pick(this,'ads_running','Yes — actively running')"><div class="choice-letter">Y</div>Yes — actively running</div>
+        <div class="choice" onclick="pick(this,'ads_running','Ran them before, paused now')"><div class="choice-letter">P</div>Ran them before, paused now</div>
+        <div class="choice" onclick="pick(this,'ads_running','No — never run ads')"><div class="choice-letter">N</div>No — never run ads</div>
+      </div>
+      <div class="err" id="err1">Please select an option.</div>
+      <div class="btn-row">
+        <button class="btn-next" onclick="next(1)">Continue →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 2: Planned ad spend -->
+  <div class="step" id="s2">
+    <div style="margin-top:28px">
+      <div class="step-num">2</div>
+      <div class="step-q">How much do you plan to spend on ads per month?*</div>
+      <div class="choices">
+        <div class="choice" onclick="pick(this,'planned_spend','Under $500/month')"><div class="choice-letter">A</div>Under $500/month</div>
+        <div class="choice" onclick="pick(this,'planned_spend','$500–$1,000/month')"><div class="choice-letter">B</div>$500–$1,000/month</div>
+        <div class="choice" onclick="pick(this,'planned_spend','$1,000–$3,000/month')"><div class="choice-letter">C</div>$1,000–$3,000/month</div>
+        <div class="choice" onclick="pick(this,'planned_spend','$3,000–$5,000/month')"><div class="choice-letter">D</div>$3,000–$5,000/month</div>
+        <div class="choice" onclick="pick(this,'planned_spend','$5,000+/month')"><div class="choice-letter">E</div>$5,000+/month</div>
+      </div>
+      <div class="err" id="err2">Please select an option.</div>
+      <div class="btn-row">
+        <button class="btn-back" onclick="back(2)">← Back</button>
+        <button class="btn-next" onclick="next(2)">Continue →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 4: Timeline -->
+  <div class="step" id="s3">
+    <div style="margin-top:28px">
+      <div class="step-num">3</div>
+      <div class="step-q">How soon are you looking to get started?*</div>
+      <div class="choices">
+        <div class="choice" onclick="pick(this,'timeline','Right away — this is urgent')"><div class="choice-letter">A</div>Right away — this is urgent</div>
+        <div class="choice" onclick="pick(this,'timeline','Within the next 30 days')"><div class="choice-letter">B</div>Within the next 30 days</div>
+        <div class="choice" onclick="pick(this,'timeline','1–3 months out')"><div class="choice-letter">C</div>1–3 months out</div>
+        <div class="choice" onclick="pick(this,'timeline','Just exploring for now')"><div class="choice-letter">D</div>Just exploring for now</div>
+      </div>
+      <div class="err" id="err3">Please select an option.</div>
+      <div class="btn-row">
+        <button class="btn-back" onclick="back(3)">← Back</button>
+        <button class="btn-next" onclick="next(3)">Continue →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 5: Contact info (last) -->
+  <div class="step" id="s4">
+    <div style="margin-top:28px">
+      <div class="step-num">4</div>
+      <div class="step-q">Last step — how can we reach you?</div>
       <div class="field-grid">
         <div><label class="fl" for="fname">First name</label><input type="text" id="fname" placeholder="Jane"/></div>
         <div><label class="fl" for="lname">Last name</label><input type="text" id="lname" placeholder="Smith"/></div>
@@ -142,104 +181,15 @@ input:focus { border-color: var(--navy); background: var(--white); }
       <div class="field-grid full">
         <div><label class="fl" for="phone">Phone number</label><input type="tel" id="phone" placeholder="(555) 000-0000"/></div>
       </div>
-      <div class="err" id="err1">Please fill in all fields to continue.</div>
-      <div class="btn-row"><button class="btn-next" onclick="next(1)">Continue →</button></div>
-    </div>
-  </div>
-
-  <div class="step" id="s2">
-    <div style="margin-top:28px">
-      <div class="step-num">2</div>
-      <div class="step-q">Are you currently running paid ads?*</div>
-      <div class="choices">
-        <div class="choice" onclick="pick(this,'ads_running','Yes — actively running')"><div class="choice-letter">Y</div>Yes — actively running</div>
-        <div class="choice" onclick="pick(this,'ads_running','Ran them before, paused now')"><div class="choice-letter">P</div>Ran them before, paused now</div>
-        <div class="choice" onclick="pick(this,'ads_running','No — never run ads')"><div class="choice-letter">N</div>No — never run ads</div>
-      </div>
-      <div class="err" id="err2">Please select an option.</div>
-      <div class="btn-row">
-        <button class="btn-back" onclick="back(2)">← Back</button>
-        <button class="btn-next" onclick="next(2)">Continue →</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="step" id="s3">
-    <div style="margin-top:28px">
-      <div class="step-num">3</div>
-      <div class="step-q">How much are you currently spending on ads per month?*</div>
-      <div class="choices">
-        <div class="choice" onclick="pick(this,'ad_spend','$0 — not spending yet')"><div class="choice-letter">A</div>$0 — not spending yet</div>
-        <div class="choice" onclick="pick(this,'ad_spend','Under $500/month')"><div class="choice-letter">B</div>Under $500/month</div>
-        <div class="choice" onclick="pick(this,'ad_spend','$500–$1,000/month')"><div class="choice-letter">C</div>$500–$1,000/month</div>
-        <div class="choice" onclick="pick(this,'ad_spend','$1,000–$3,000/month')"><div class="choice-letter">D</div>$1,000–$3,000/month</div>
-        <div class="choice" onclick="pick(this,'ad_spend','$3,000+/month')"><div class="choice-letter">E</div>$3,000+/month</div>
-      </div>
-      <div class="err" id="err3">Please select an option.</div>
-      <div class="btn-row">
-        <button class="btn-back" onclick="back(3)">← Back</button>
-        <button class="btn-next" onclick="next(3)">Continue →</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="step" id="s4">
-    <div style="margin-top:28px">
-      <div class="step-num">4</div>
-      <div class="step-q">How much do you plan to spend on ads per month?*</div>
-      <div class="choices">
-        <div class="choice" onclick="pick(this,'planned_spend','Under $500/month')"><div class="choice-letter">A</div>Under $500/month</div>
-        <div class="choice" onclick="pick(this,'planned_spend','$500–$1,000/month')"><div class="choice-letter">B</div>$500–$1,000/month</div>
-        <div class="choice" onclick="pick(this,'planned_spend','$1,000–$3,000/month')"><div class="choice-letter">C</div>$1,000–$3,000/month</div>
-        <div class="choice" onclick="pick(this,'planned_spend','$3,000–$5,000/month')"><div class="choice-letter">D</div>$3,000–$5,000/month</div>
-        <div class="choice" onclick="pick(this,'planned_spend','$5,000+/month')"><div class="choice-letter">E</div>$5,000+/month</div>
-      </div>
-      <div class="err" id="err4">Please select an option.</div>
+      <div class="err" id="err4">Please fill in all fields to continue.</div>
       <div class="btn-row">
         <button class="btn-back" onclick="back(4)">← Back</button>
-        <button class="btn-next" onclick="next(4)">Continue →</button>
+        <button class="btn-next" onclick="submit()">Book My Free Consultation →</button>
       </div>
     </div>
   </div>
 
-  <div class="step" id="s5">
-    <div style="margin-top:28px">
-      <div class="step-num">5</div>
-      <div class="step-q">What industry are you in?*</div>
-      <div class="choices">
-        <div class="choice" onclick="pick(this,'industry','Home services')"><div class="choice-letter">A</div>Home services (roofing, HVAC, plumbing, etc.)</div>
-        <div class="choice" onclick="pick(this,'industry','Healthcare or medical')"><div class="choice-letter">B</div>Healthcare or medical</div>
-        <div class="choice" onclick="pick(this,'industry','Legal or financial services')"><div class="choice-letter">C</div>Legal or financial services</div>
-        <div class="choice" onclick="pick(this,'industry','Real estate')"><div class="choice-letter">D</div>Real estate</div>
-        <div class="choice" onclick="pick(this,'industry','E-commerce or retail')"><div class="choice-letter">E</div>E-commerce or retail</div>
-        <div class="choice" onclick="pick(this,'industry','Other')"><div class="choice-letter">F</div>Other</div>
-      </div>
-      <div class="err" id="err5">Please select an option.</div>
-      <div class="btn-row">
-        <button class="btn-back" onclick="back(5)">← Back</button>
-        <button class="btn-next" onclick="next(5)">Continue →</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="step" id="s6">
-    <div style="margin-top:28px">
-      <div class="step-num">6</div>
-      <div class="step-q">How soon are you looking to get started?*</div>
-      <div class="choices">
-        <div class="choice" onclick="pick(this,'timeline','Right away — this is urgent')"><div class="choice-letter">A</div>Right away — this is urgent</div>
-        <div class="choice" onclick="pick(this,'timeline','Within the next 30 days')"><div class="choice-letter">B</div>Within the next 30 days</div>
-        <div class="choice" onclick="pick(this,'timeline','1–3 months out')"><div class="choice-letter">C</div>1–3 months out</div>
-        <div class="choice" onclick="pick(this,'timeline','Just exploring for now')"><div class="choice-letter">D</div>Just exploring for now</div>
-      </div>
-      <div class="err" id="err6">Please select an option.</div>
-      <div class="btn-row">
-        <button class="btn-back" onclick="back(6)">← Back</button>
-        <button class="btn-next" onclick="submit()">Submit →</button>
-      </div>
-    </div>
-  </div>
-
+  <!-- Thank you -->
   <div class="thankyou" id="thankyou">
     <div class="ty-mark">✓</div>
     <div class="ty-head">You're all set!</div>
@@ -248,13 +198,11 @@ input:focus { border-color: var(--navy); background: var(--white); }
 
 </div>
 
-<!-- TRUST -->
 <div class="trust">
   <div class="stars">★★★★★</div>
   <div class="trust-line">Trusted by businesses nationwide</div>
 </div>
 
-<!-- WHY -->
 <div class="why">
   <h2>Why Businesses Work With Finnco Solutions</h2>
   <div class="cards">
@@ -278,7 +226,6 @@ input:focus { border-color: var(--navy); background: var(--white); }
   <a class="why-cta" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Get Your Free Consultation</a>
 </div>
 
-<!-- FOOTER -->
 <div class="foot">
   <div class="foot-logo">Finnco Solutions</div>
   <div class="foot-tag">Qualified leads delivered to your business.</div>
@@ -286,8 +233,9 @@ input:focus { border-color: var(--navy); background: var(--white); }
 </div>
 
 <script>
-const TOTAL = 6;
+const TOTAL = 4;
 const answers = {};
+
 function updateBar(n) {
   document.getElementById('bar').style.width = Math.round((n/TOTAL)*100)+'%';
 }
@@ -305,27 +253,23 @@ function pick(el,key,val) {
 }
 function next(step) {
   document.getElementById('err'+step).classList.remove('show');
-  if(step===1){
-    const fn=document.getElementById('fname').value.trim();
-    const ln=document.getElementById('lname').value.trim();
-    const em=document.getElementById('email').value.trim();
-    const ph=document.getElementById('phone').value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
-    if(!fn||!ln||!em||!ph){document.getElementById('err1').classList.add('show');document.getElementById('err1').textContent='Please fill in all fields to continue.';return;}
-    if(!emailRegex.test(em)){document.getElementById('err1').classList.add('show');document.getElementById('err1').textContent='Please enter a valid email address.';return;}
-    if(!phoneRegex.test(ph)){document.getElementById('err1').classList.add('show');document.getElementById('err1').textContent='Please enter a valid phone number.';return;}
-    answers.first_name=fn;answers.last_name=ln;answers.email=em;answers.phone=ph;
-  } else {
-    const keys=['','','ads_running','ad_spend','planned_spend','industry','timeline'];
-    if(!answers[keys[step]]){document.getElementById('err'+step).classList.add('show');return;}
-  }
+  const keys=['','ads_running','planned_spend','timeline',''];
+  if(!answers[keys[step]]){document.getElementById('err'+step).classList.add('show');return;}
   showStep(step+1);
 }
 function back(step){showStep(step-1);}
 function submit(){
-  document.getElementById('err6').classList.remove('show');
-  if(!answers['timeline']){document.getElementById('err6').classList.add('show');return;}
+  document.getElementById('err4').classList.remove('show');
+  const fn=document.getElementById('fname').value.trim();
+  const ln=document.getElementById('lname').value.trim();
+  const em=document.getElementById('email').value.trim();
+  const ph=document.getElementById('phone').value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+  if(!fn||!ln||!em||!ph){document.getElementById('err4').classList.add('show');document.getElementById('err4').textContent='Please fill in all fields to continue.';return;}
+  if(!emailRegex.test(em)){document.getElementById('err4').classList.add('show');document.getElementById('err4').textContent='Please enter a valid email address.';return;}
+  if(!phoneRegex.test(ph)){document.getElementById('err4').classList.add('show');document.getElementById('err4').textContent='Please enter a valid phone number.';return;}
+  answers.first_name=fn;answers.last_name=ln;answers.email=em;answers.phone=ph;
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
   document.getElementById('bar').style.width='100%';
   document.getElementById('thankyou').classList.add('active');
